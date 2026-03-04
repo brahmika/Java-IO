@@ -12,22 +12,12 @@ public class EmployeePayrollData {
         this.salary = salary;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public double getSalary() {
-        return salary;
+    public String toFileFormat() {
+        return id + "," + name + "," + salary;
     }
 
     @Override
     public String toString() {
-        return "Employee ID: " + id +
-                ", Name: " + name +
-                ", Salary: " + salary;
+        return "ID: " + id + ", Name: " + name + ", Salary: " + salary;
     }
 }
