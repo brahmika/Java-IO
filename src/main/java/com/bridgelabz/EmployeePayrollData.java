@@ -12,8 +12,21 @@ public class EmployeePayrollData {
         this.salary = salary;
     }
 
-    public String toFileFormat() {
-        return id + "," + name + "," + salary;
+    public static EmployeePayrollData fromString(String line) {
+        String[] parts = line.split(",");
+        return new EmployeePayrollData(
+                Integer.parseInt(parts[0]),
+                parts[1],
+                Double.parseDouble(parts[2])
+        );
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Override
